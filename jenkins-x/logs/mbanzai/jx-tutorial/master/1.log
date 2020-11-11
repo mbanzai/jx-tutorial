@@ -1,0 +1,79 @@
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mcredential-initializer[0m
+{"level":"info","ts":1605090518.0648234,"caller":"creds-init/main.go:44","msg":"Credentials initialized."}
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mworking-dir-initializer[0m
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mplace-tools[0m
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-mbanzai-jx-tutorial-master-rs9pb-9pvwl[0m
+{"level":"info","ts":1605090529.8262715,"caller":"git/git.go:105","msg":"Successfully cloned https://github.com/*******/**-tutorial.git @ v0.0.1 in path /workspace/source"}
+{"level":"warn","ts":1605090529.8263602,"caller":"git/git.go:152","msg":"Unexpected error: creating symlink: symlink /tekton/home/.ssh /root/.ssh: file exists"}
+{"level":"info","ts":1605090529.9124987,"caller":"git/git.go:133","msg":"Successfully initialized and updated submodules in path /workspace/source"}
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-builder-home[0m
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:a325f38465322321ed5e586041a24858ce34a463
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-make-build[0m
+CGO_ENABLED=0 GO15VENDOREXPERIMENT=1 go build -ldflags '' -o bin/**-tutorial main.go
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+E1111 10:29:04.191142      11 aws_credentials.go:77] while getting AWS credentials NoCredentialProviders: no valid providers in chain. Deprecated.
+	For verbose messaging see aws.Config.CredentialsChainVerboseErrors
+[36mINFO[0m[0000] Using dockerignore file: /workspace/source/.dockerignore 
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] Built cross stage deps: map[]                
+[36mINFO[0m[0000] No base image, nothing to extract            
+[36mINFO[0m[0000] Executing 0 build triggers                   
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] Checking for cached layer 10.96.30.82:5000/todo/cache:b1c73f3465ad4ce1fbecef9a91699df2bcf282cb0b741524234daad7356d8469... 
+[36mINFO[0m[0000] No cached layer found for cmd COPY ./bin/ /  
+[36mINFO[0m[0000] Unpacking rootfs as cmd COPY ./bin/ / requires it. 
+[36mINFO[0m[0000] EXPOSE 8080                                  
+[36mINFO[0m[0000] cmd: EXPOSE                                  
+[36mINFO[0m[0000] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] ENTRYPOINT ["/**-tutorial"]                  
+[36mINFO[0m[0000] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0000] COPY ./bin/ /                                
+[36mINFO[0m[0000] Resolving 2 paths                            
+[36mINFO[0m[0000] Taking snapshot of files...                  
+[36mINFO[0m[0001] Pushing layer 10.96.30.82:5000/todo/cache:b1c73f3465ad4ce1fbecef9a91699df2bcf282cb0b741524234daad7356d8469 to cache now 
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/**-tutorial to an unshallow repository
+Generating change log from git ref 586407a8ffcd9b5d23f64ed26f614dcc76aa7ba3 => 7f7c9d6db42968b332eb339b4de373b4df1b38ec
+Associating user mauro-cossu-oracle-com in users.jenkins.io with email mauro.cossu@oracle.com to git GitProvider user with login mauro.cossu@oracle.com-0 as emails match
+Adding label jenkins.io/git-github-userid=mauro.cossu@oracle.com-0 to user mauro-cossu-oracle-com in users.jenkins.io
+Associating user mauro-cossu-oracle-com in users.jenkins.io with email mauro.cossu@oracle.com to git GitProvider user with login mauro.cossu@oracle.com-0 as emails match
+Adding label jenkins.io/git-github-userid=mauro.cossu@oracle.com-0 to user mauro-cossu-oracle-com in users.jenkins.io
+Finding issues in commit messages using git format
+WARNING: No release found for *******/**-tutorial and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/*******/**-tutorial/releases/tag/v0.0.1
+generated: /workspace/source/charts/**-tutorial/templates/release.yaml
+Created Release **-tutorial-0-0-1 resource in namespace **
+Updating PipelineActivity *******-**-tutorial-master-1 with version 0.0.1
+Updated PipelineActivities *******-**-tutorial-master-1 with release notes URL: https://github.com/*******/**-tutorial/releases/tag/v0.0.1
+
+Showing logs for build [32mmbanzai-jx-tutorial-master-rs9pb-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file **-tutorial-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 401 response: {"error":"unauthorized"}
+error: Failed to post chart to http://jenkins-x-chartmuseum:8080/api/charts due to response 401: {"error":"unauthorized"}
+[31m
+Pipeline failed on stage 'from-build-pack' : container 'step-promote-helm-release'. The execution of the pipeline has stopped.[0m
